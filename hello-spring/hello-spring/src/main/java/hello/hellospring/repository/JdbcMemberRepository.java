@@ -36,7 +36,6 @@ public class JdbcMemberRepository implements MemberRepository {
             close(conn, pstmt, rs);
         }
     }
-
     @Override
     public Optional<Member> findById(Long id) {
         String sql = "select * from member where id = ?";
@@ -139,5 +138,5 @@ public class JdbcMemberRepository implements MemberRepository {
     }
     private void close(Connection conn) throws SQLException {
         DataSourceUtils.releaseConnection(conn, dataSource);
-}
+    }
 }
